@@ -1,0 +1,19 @@
+<Context path="/j10">
+	
+	<Resource name="BeanManager" 
+			auth="Container"
+			type="jakarta.enterprise.inject.spi.BeanManager"
+			factory="org.jboss.weld.resources.ManagerObjectFactory" />
+			
+	<Resource name="jdbc/MyDataSource" 
+			auth="Container"
+			type="javax.sql.DataSource" 
+			factory="org.apache.commons.dbcp2.BasicDataSourceFactory"
+			driverClassName="com.mysql.cj.jdbc.Driver"
+			username="jakarta"
+			password="Jakarta@1!"
+			url="jdbc:mysql://localhost:3306/jakarta" 
+		 	maxTotal="20"		 	
+		 	maxIdle="10" />
+
+</Context>

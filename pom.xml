@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.onndoo</groupId>
+	<artifactId>jakarta10-tomcat</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.report.sourceEncoding>UTF-8</project.report.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<compiler-plugin.version>3.13.0</compiler-plugin.version>
+		<war-plugin.version>3.4.0</war-plugin.version>
+	</properties>
+	
+	<dependencies>
+		<!-- Servlet -->
+		<!-- Provided by Tomcat -->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Servlet -->
+		
+		
+		<!-- Persistence -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.5.2.Final</version>
+		</dependency>
+		<!-- Persistence -->
+		
+		
+		<!-- CDI -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.enterprise</groupId>
+			<artifactId>jakarta.enterprise.cdi-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet-shaded</artifactId>
+			<version>5.1.2.Final</version>
+		</dependency>
+		<!-- CDI -->
+		
+		
+		<!-- Security -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.security.enterprise</groupId>
+			<artifactId>jakarta.security.enterprise-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.glassfish.soteria</groupId>
+			<artifactId>jakarta.security.enterprise</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<!-- Security -->
+		
+		
+		<!--Authorization-->
+		<!-- Specification -->
+		<dependency>
+    		<groupId>jakarta.authorization</groupId>
+    		<artifactId>jakarta.authorization-api</artifactId>
+    		<version>2.1.0</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+    		<groupId>org.glassfish.exousia</groupId>
+    		<artifactId>exousia</artifactId>
+    		<version>2.1.2</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.glassfish.exousia</groupId>
+    		<artifactId>exousia.spi.tomcat</artifactId>
+    		<version>2.1.2</version>
+		</dependency>
+		<!--Authorization-->
+		
+		
+		<!-- Jakarta Faces -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.faces</groupId>
+			<artifactId>jakarta.faces-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>jakarta.faces</artifactId>
+			<version>4.0.9</version>
+		</dependency>
+		<!-- Jakarta Faces -->
+		
+		
+		<!-- WebService REST -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.ws.rs</groupId>
+			<artifactId>jakarta.ws.rs-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>3.1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>3.1.9</version>
+		</dependency>
+		<!-- WebService REST -->
+		
+		
+		<!-- Validation -->
+		<!-- Specification -->
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<!-- Implementation -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>7.0.5.Final</version>
+		</dependency>
+		<!-- Validation -->
+		
+		
+		<!-- Other -->
+		<!-- MySQL -->		
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.4.0</version>
+		</dependency>				
+		<!-- Apache Commons Dbcp2 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<!-- PrimeFaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+    		<artifactId>primefaces</artifactId>
+    		<version>12.0.0</version>
+    		<classifier>jakarta</classifier>
+		</dependency>
+		<!-- Faker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<!-- Other -->
+		
+		
+	</dependencies>
+	
+	<build>
+		<finalName>j10</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war-plugin.version}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	
+</project>
