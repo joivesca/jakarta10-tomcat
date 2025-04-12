@@ -26,8 +26,25 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- Servlet -->
+		<!-- JSP -->
+		<dependency>
+			<groupId>jakarta.servlet.jsp</groupId>
+			<artifactId>jakarta.servlet.jsp-api</artifactId>
+			<version>3.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JSP -->
+		<!-- Expression Language -->
+		<dependency>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
+			<version>5.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Expression Language -->
 		
 		
+
 		<!-- Persistence -->
 		<!-- Specification -->
 		<dependency>
@@ -42,8 +59,8 @@
 			<version>6.5.2.Final</version>
 		</dependency>
 		<!-- Persistence -->
-		
-		
+
+
 		<!-- CDI -->
 		<!-- Specification -->
 		<dependency>
@@ -55,11 +72,11 @@
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet-shaded</artifactId>
-			<version>5.1.2.Final</version>
+			<version>5.1.0.Final</version>
 		</dependency>
 		<!-- CDI -->
-		
-		
+
+
 		<!-- Security -->
 		<!-- Specification -->
 		<dependency>
@@ -81,9 +98,10 @@
     		<groupId>jakarta.authentication</groupId>
     		<artifactId>jakarta.authentication-api</artifactId>
     		<version>3.0.0</version>
+    		<scope>provided</scope>
 		</dependency>
 		<!-- Authentication -->
-		
+
 		<!--Authorization-->
 		<!-- Specification -->
 		<dependency>
@@ -103,8 +121,8 @@
     		<version>2.1.2</version>
 		</dependency>
 		<!--Authorization-->
-		
-		
+
+
 		<!-- Jakarta Faces -->
 		<!-- Specification -->
 		<dependency>
@@ -119,8 +137,8 @@
 			<version>4.0.9</version>
 		</dependency>
 		<!-- Jakarta Faces -->
-		
-		
+
+
 		<!-- WebService REST -->
 		<!-- Specification -->
 		<dependency>
@@ -140,8 +158,8 @@
 			<version>3.1.9</version>
 		</dependency>
 		<!-- WebService REST -->
-		
-		
+
+
 		<!-- Validation -->
 		<!-- Specification -->
 		<dependency>
@@ -156,15 +174,15 @@
 			<version>7.0.5.Final</version>
 		</dependency>
 		<!-- Validation -->
-		
-		
+
+
 		<!-- Other -->
 		<!-- MySQL -->		
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.4.0</version>
-		</dependency>				
+		</dependency>
 		<!-- Apache Commons Dbcp2 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
